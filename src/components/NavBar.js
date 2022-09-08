@@ -1,3 +1,5 @@
+import CartWidget from './CartWidget' ;
+
 
 function NavBar() {
     return(
@@ -13,8 +15,10 @@ function NavBar() {
 			<a className="nav-link texto" href=" #">seccion 1</a>
 			<a className="nav-link texto" href=" #">seccion 2</a>
 			<a className="nav-link texto" href=" #">seccion 3</a>
+			
 		</div>
 		</div>
+		<CartWidget/>
 	</div>
 	</nav>
     );
