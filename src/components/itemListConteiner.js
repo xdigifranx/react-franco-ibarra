@@ -1,9 +1,22 @@
 import ItemCount from '../components/ItemCount';
+import ItemList from '../components/ItemList'
+import { Fetch } from "../components/Fetch";
+import { useEffect ,useState } from 'react';
+import products from "./products";
 
-const ItemListConteiner = () => { 
+const ItemListConteiner = () => {
+
+    const [listProductos , setListProductos]= useState([])
+    useEffect(()=>{
+        Fetch(products)
+        .then(data => setListProductos(data))
+
+    },[])
+    console.log(listProductos);
     return(
         <>
-        <p>lista de productos</p>
+        <div className=" flex"><ItemList listProductos={listProductos}/>
+        </div>
         <ItemCount initial={1} stock={10} />
         </>
     )

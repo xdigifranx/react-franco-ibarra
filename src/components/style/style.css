@@ -1,7 +1,16 @@
-
+body{
+    background-image: linear-gradient(95deg, #ff9d7a 0, #ff8f83 10%, #ff8089 20%, #ff718d 30%, #ff628d 40%, #f25389 50%, #d34683 60%, #b63c7d 70%, #9e3678 80%, #883174 90%, #752e71 100%);
+}
 span{
     font-size: 2rem;
     font-family: roboto;
     width: 48px;
     text-align: center;
+}
+.flex{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    width: 20vw;
+    height: auto;
 }
