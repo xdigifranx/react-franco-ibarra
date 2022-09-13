@@ -12,10 +12,11 @@ const ItemListConteiner = () => {
         .then(data => setListProductos(data))
 
     },[])
-    console.log(listProductos);
+    
     return(
         <>
-        <div className=" flex"><ItemList listProductos={listProductos}/>
+        <div className="flex  ">
+        <ItemList listProductos={listProductos}/>
         </div>
         <ItemCount initial={1} stock={10} />
         </>

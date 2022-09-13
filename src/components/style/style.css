@@ -8,9 +8,12 @@ span{
     text-align: center;
 }
 .flex{
-    display: flex;
-    flex-direction:row ;
-    flex-wrap: wrap;
-    width: 20vw;
+    text-align: center;
+    width: 22rem;
     height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+
 }
