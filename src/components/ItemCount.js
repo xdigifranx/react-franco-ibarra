@@ -24,7 +24,7 @@ const ItemCount = ( {initial, stock}) =>{
     
     return(
 <>
-    <div className="btn-group" role="group" aria-label="Basic example">
+    <div className="btn-group contador" role="group" aria-label="Basic example">
         <button onClick={()=>sumar()} type="button" className="btn btn-primary">+</button>
         <span>{contador}</span>
         <button onClick={()=>restar()} type="button" className="btn btn-primary">-</button>

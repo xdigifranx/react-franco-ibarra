@@ -1,5 +1,5 @@
 import ItemCount from '../components/ItemCount';
-import ItemList from '../components/ItemList'
+import ItemList from '../components/ItemList';
 import { Fetch } from "../components/Fetch";
 import { useEffect ,useState } from 'react';
 import products from "./products";

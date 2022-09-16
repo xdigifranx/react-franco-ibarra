@@ -17,3 +17,12 @@ span{
     margin-bottom: 10px; 
 
 }
+.foto{
+    width: 20vw;
+    position: relative;
+}
+.contador{
+    
+    justify-content: center;
+    align-items: center;
+}
