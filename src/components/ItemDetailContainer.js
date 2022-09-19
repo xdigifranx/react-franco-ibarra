@@ -1,21 +1,39 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import products from "./products";
 import ItemDetail from "./ItemDetail";
-import { Fetch } from "./Fetch";
 import ItemCount from '../components/ItemCount';
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
-    const [data, setData]= useState({});
-
-    useEffect(()=>{
-    Fetch(products[1]) 
-        .then(result=>setData(result))
-        .catch(err=>console.log(err))
-},[]);
+    const [item, setItem]= useState({});
     
+    const {key}= useParams()
+    console.log(key);
+
+    const Fetch = (producto)=>{
+        
+        return new Promise((resolve) => {
+            setTimeout(()=>{
+                if (key) {
+                    
+                    resolve(products.find((item)=>item.key == key))
+                }else resolve(producto);
+                
+            },2000)
+        })
+        }
+        useEffect(()=>{
+            Fetch(products)
+            .then(data => setItem(data))
+    
+        },[key])
+        console.log(item);
+
     return(
         <>
-        <ItemDetail producto={data} />
+        <ItemDetail item={item} />
         <ItemCount initial={1} stock={10} />
         </>
 );
