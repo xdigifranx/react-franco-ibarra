@@ -7,6 +7,7 @@ import ItemCount from '../components/ItemCount';
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
+    
     const [item, setItem]= useState({});
     
     const {key}= useParams()
@@ -33,8 +34,8 @@ const ItemDetailContainer = ()=>{
 
     return(
         <>
-        <ItemDetail item={item} />
-        <ItemCount initial={1} stock={10} />
+        <ItemDetail item={item}/>
+        <ItemCount initial={0} stock={10}/>
         </>
 );
 };
