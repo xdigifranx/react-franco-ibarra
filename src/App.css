@@ -30,8 +30,13 @@ span{
   position: relative;
 }
 .contador{
-  display: block;
+  
+
   text-align: center;
   margin: 2px;
   padding: 2px;
+}
+.cart{
+  color: black;
+  text-decoration: none;
 }

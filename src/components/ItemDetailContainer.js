@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable eqeqeq */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import products from "./products";
 import ItemDetail from "./ItemDetail";
-import ItemCount from '../components/ItemCount';
 import { useParams } from "react-router-dom";
+
 
 const ItemDetailContainer = ()=>{
     
@@ -30,12 +31,9 @@ const ItemDetailContainer = ()=>{
             .then(data => setItem(data))
     
         },[key])
-        console.log(item);
-
     return(
         <>
         <ItemDetail item={item}/>
-        <ItemCount initial={0} stock={10}/>
         </>
 );
 };
