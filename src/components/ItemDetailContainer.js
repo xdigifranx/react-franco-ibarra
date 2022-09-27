@@ -12,7 +12,6 @@ const ItemDetailContainer = ()=>{
     const [item, setItem]= useState({});
     
     const {key}= useParams()
-    console.log(key);
 
     const Fetch = (producto)=>{
         

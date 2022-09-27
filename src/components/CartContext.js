@@ -19,8 +19,10 @@ const CartContextProvider =({children})=>{
     const totalprecio=()=>{
         return cartList.reduce((prev,act) =>prev+act.qty*act.precio,0)  
     }
-
-    const totalProducts = ()=>cartList.reduce((acumulador, productosAc)=>acumulador + productosAc.qty,0)
+const totalProducts=()=>{
+    let prod= cartList.map(item=>item.qty);
+    return prod.reduce((acumulador, qty)=>acumulador+=qty,0);
+}
 
         const clear = ()=>{
             setCartList([]);

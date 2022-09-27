@@ -7,7 +7,7 @@ const ItemDetail=({item})=>{
     const ctx= useContext(CartContext); 
     
     const onAdd = (qty)=>{
-        alert("se agrego al carrito")
+        alert("se agrego "+qty+" productos al carrito")
         setItemCount(qty)
         ctx.addItem(item,qty);
     }
