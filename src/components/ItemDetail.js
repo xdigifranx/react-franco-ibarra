@@ -13,12 +13,12 @@ const ItemDetail=({item})=>{
     }
     return(
         <>
-        <div className="card flex">
-            <img src={item.pictureUrl} className="card-img-top foto" alt="..."></img>
+        <div className="tarjeta flex">
+            <img src={item.pictureUrl} className="foto" alt="remera"></img>
             <div>
-                <h5>{item.titulo}</h5>
-                <p>{item.precio}</p>
-                <p>Remera algodon estampada, talles XS/S/M/L/XL/XXL/XXXL</p>
+                <h5 className='bton'>{item.titulo}</h5>
+                <p className='bton'>{item.precio}</p>
+                <p className='bton'>Remera algodon estampada, talles XS/S/M/L/XL/XXL/XXXL</p>
                 </div>
                 {itemCount === 0 ?
         <ItemCount initial={1} stock={10} onAdd={onAdd}/>:

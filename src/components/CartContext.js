@@ -8,9 +8,9 @@ const CartContextProvider =({children})=>{
     const [cartList, setCartList]= useState([])
 
     const addItem =(product, qty)=>{
-        if (isInCart(product.key)) {
+        if (isInCart(product.id)) {
             setCartList(cartList.map(produ => {
-                return produ.key === product.key ?{...produ, qty: produ.qty + qty} : produ
+                return produ.id === product.id ?{...produ, qty: produ.qty + qty} : produ
             }));
         } else {
             setCartList([...cartList, {...product, qty}]);
@@ -27,11 +27,11 @@ const totalProducts=()=>{
         const clear = ()=>{
             setCartList([]);
         }
-    const removeItem = (key)=>{
-        setCartList(cartList.filter(item => item.key !== key));
+    const removeItem = (id)=>{
+        setCartList(cartList.filter(item => item.id !== id));
     }
     const isInCart = (id) => {
-        return cartList.find(producto => id === producto.key)? true:false;
+        return cartList.find(producto => id === producto.id)? true:false;
     }
     return(
         <>

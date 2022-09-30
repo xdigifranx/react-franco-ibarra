@@ -20,14 +20,14 @@ const Cart=()=>{
     </Link>
         {
         cartList.map(item =>
-        <div key={item.key} className="card flex">
-            <img src={item.pictureUrl} className="card-img-top" alt="..."></img>
-            <div className="card-body">
-                <h4 className="card-title">{item.titulo}</h4>
-                <h5 className="card-text">${item.precio}</h5>
-                <h5>Items:{item.qty}</h5>
-                <h5>Subtotal:{item.precio* item.qty}</h5>
-                <button className="btn btn-primary" onClick={()=>removeItem(item.key)}>borrar</button>
+        <div key={item.id} className="tarjeta flex">
+            <img src={item.pictureUrl} className="foto" alt="remera"></img>
+            <div className="">
+                <h4 className="bton">{item.titulo}</h4>
+                <h5 className="bton">${item.precio}</h5>
+                <h5 className="bton">Items: {item.qty}</h5>
+                <h5 className="bton">Subtotal: ${item.precio* item.qty}</h5>
+                <button className="btn btn-primary" onClick={()=>removeItem(item.id)}>borrar</button>
             </div>
         </div>)}
     <button className="btn btn-dark" onClick={clear}>borrar todos los productos</button>
