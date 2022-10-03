@@ -2,12 +2,16 @@ import ItemCount from '../components/ItemCount';
 import { useState, useContext} from "react";
 import { Link} from "react-router-dom";
 import { CartContext } from "./CartContext";
+import Swal from 'sweetalert2'
+
 const ItemDetail=({item})=>{
     const [itemCount, setItemCount]= useState(0)
     const ctx= useContext(CartContext); 
     
     const onAdd = (qty)=>{
-        alert("se agrego "+qty+" productos al carrito")
+        Swal.fire(
+            "se agrego "+qty+" productos al carrito"
+        )
         setItemCount(qty)
         ctx.addItem(item,qty);
     }

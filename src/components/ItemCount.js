@@ -21,9 +21,9 @@ const ItemCount = ( {initial, stock, onAdd}) =>{
         
 <>
     <div className="contador" role="group" aria-label="Basic example">
-        <button onClick={()=>sumar()} type="button" className="btn btn-primary">+</button>
+        <button onClick={()=>restar()} type="button" className="btn btn-dark">-</button>
         <span>{contador}</span>
-        <button onClick={()=>restar()} type="button" className="btn btn-primary">-</button>
+        <button onClick={()=>sumar()} type="button" className="btn btn-dark">+</button>
         <button onClick={()=>onAdd(contador)} type="button" className="btn btn-primary">comprar producto</button>
     </div>
 

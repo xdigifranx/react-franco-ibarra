@@ -8,8 +8,10 @@ const CartWidget = () =>{
 
     return (
         <>
-            <BsFillCartFill  className="cart"></BsFillCartFill>
-            <span> {totalProducts()}</span>
+        <button type="button" className="btn btn-dark position-relative"><BsFillCartFill  className="cart"></BsFillCartFill>
+        <span className="badge text-bg-secondary ">{totalProducts()}<span className="visually-hidden"></span>
+        </span>
+        </button>
         </>
     )
 };

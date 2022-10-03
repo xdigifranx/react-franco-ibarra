@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Link} from "react-router-dom";
+import { serverTimestamp ,doc, setDoc, collection,updateDoc, increment } from "firebase/firestore";
+import {db} from "./FirebaseCofig";
+import Swal from 'sweetalert2';
 
 const Cart=()=>{
     const {cartList,removeItem,clear,totalprecio} = useContext(CartContext);
@@ -11,7 +14,37 @@ const Cart=()=>{
         <Link to='/'><button className="btn btn-primary">ir al catalogo</button>
         </Link></>)
     }
-
+    const createOrder=async()=>{
+        const itemsForDB=cartList.map(item=>({
+            id:item.id,
+            titulo:item.titulo,
+            precio:item.precio,
+            qty:item.qty
+        }))
+        let order={
+            buyer:{
+                name:"Franco",
+                email:"emailfalso@yaoo.com",
+                phone:"1122334455"
+            },
+            items:itemsForDB,
+            date:serverTimestamp(),
+            total:totalprecio()
+        }
+        const newOrderRef = doc(collection(db, "order"))
+        await setDoc(newOrderRef,order)
+        cartList.forEach(async(item) => {
+        const washingtonRef = doc(db, "products", item.id);
+        await updateDoc(washingtonRef, {
+        stock: increment(-item.qty)
+        });
+        });
+        clear()
+        Swal.fire(
+            "se a comprado el producto y se guardo con el id: "+newOrderRef.id
+        )
+        
+    }
 
     return(
     <>
@@ -43,7 +76,7 @@ const Cart=()=>{
     </tr>
     <tr>
     <th>
-    <button className="btn bton">Comprar el producto</button>
+    <button onClick={createOrder} className="btn bton">Comprar el producto</button>
     </th>
     </tr>
 </tbody>

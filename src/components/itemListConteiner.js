@@ -33,9 +33,7 @@ const ItemListConteiner = () => {
     
     return(
         <>
-        <div className="flex">
         <ItemList listProductos={listProductos}/>
-        </div>
         </>
     )
 };
