@@ -55,7 +55,7 @@ const Cart=()=>{
         cartList.map(item =>
         <div key={item.id} className="tarjeta flex">
             <img src={item.pictureUrl} className="foto" alt="remera"></img>
-            <div className="">
+            <div>
                 <h4 className="bton">{item.titulo}</h4>
                 <h5 className="bton">${item.precio}</h5>
                 <h5 className="bton">Items: {item.qty}</h5>
