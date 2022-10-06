@@ -24,10 +24,9 @@ Se trata de un E-commerce  de venta de remeras, te deja elegir los productos y d
 
 
 
+
 ## Instalación 
 
 - Clonar el repositorio - git clone https://github.com/xdigifranx/react-franco-ibarra.git
 - Instalar las dependencias - npm install
 - Ejecutar el proyecto - npm start
-
-
